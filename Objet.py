@@ -1,28 +1,24 @@
-#Creado un diccionario simple
-cancion = {
-    'artista' : 'Metallica',
-    'cancion' : 'Enter Sandman',
-    'lanzamiento' : 1992,
-    'likes' : 3000
-}
+#iniciar un diccionario vacio 
+jugador = {}
+print(jugador)
+#se une un jugador
+jugador['nombre'] = 'Juan'
+jugador['puntaje'] = 0
+print(jugador)
 
-print(cancion['artista'])
-print(cancion['lanzamiento'])
+#incrementando el puntaje
+jugador['puntaje'] = 100    
+print(jugador)
 
-#Mezclar con un string
-artista = cancion['artista']
-print(f'Estoy escuchando a {artista}')
+#Acceder a un valor
+print(jugador.get('consola', 'No existe ese valor'))
 
-print(cancion)
-
-#Agregaro nuevos valores
-cancion['playlist'] = 'Heavy Metal'
-print(cancion)
-
-#Reemplazar valor existente
-cancion['cancion'] = 'Seek & Destroy'
-print(cancion)
-
-#Eliminar un valor
-del cancion['lanzamiento']
-print(cancion)
+#Iterar en el diccionario
+for llave, valor in jugador.items():
+    print(llave)
+    print(valor)
+    
+#eliminar jugador y puntaje
+del jugador['nombre']
+del jugador['puntaje']
+print(jugador)
