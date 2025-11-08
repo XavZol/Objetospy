@@ -1,24 +1,22 @@
-#iniciar un diccionario vacio 
-jugador = {}
-print(jugador)
-#se une un jugador
-jugador['nombre'] = 'Juan'
-jugador['puntaje'] = 0
-print(jugador)
+nombre = input('Cual es tu nombre: \r\n')
 
-#incrementando el puntaje
-jugador['puntaje'] = 100    
-print(jugador)
+print(f'Hola {nombre}')
 
-#Acceder a un valor
-print(jugador.get('consola', 'No existe ese valor'))
+#leer datos que seran numeros
+edad = input('Cual es tu edad\r\n')
 
-#Iterar en el diccionario
-for llave, valor in jugador.items():
-    print(llave)
-    print(valor)
+#Convertir un string a un entero
+edad = int(edad)
+
+if edad >= 18:
+    print('Eres mayor de edad')
+else:
+    print('Eres menor de edad')
     
-#eliminar jugador y puntaje
-del jugador['nombre']
-del jugador['puntaje']
-print(jugador)
+#Mezclar con operadores
+numero = input('Agrega un numero y te dire si es par o impar\r\n')
+numero = int(numero)
+if numero % 2 == 0:
+    print(f'El numero {numero} es par')
+else: 
+    print(f'El numero {numero} es impar')
