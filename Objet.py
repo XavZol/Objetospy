@@ -1,20 +1,16 @@
 class Restaurant:
-    
-    def agregar_restaurant(self, nombre):
+
+    def __init__(self, nombre, categoria, precio):
         self.nombre = nombre # Atributo
+        self.categoria = categoria
+        self.precio = precio
 
     def mostrar_informacion(self):
-        print(f'Nombre: {self.nombre}')
+        print(f'Nombre: {self.nombre}, Categoria: {self.categoria}, Precio: {self.precio}')
 
 #Instanciar la clase
-restaurant = Restaurant()
-restaurant.agregar_restaurant('Pizzeria Mexico')
+restaurant = Restaurant('Pizzeria Mexico', 'Comida Italiana', 50)
 restaurant.mostrar_informacion()
 
-restaurant2 = Restaurant()
-restaurant2.agregar_restaurant('Hamburguesas Python')
+restaurant2 = Restaurant('Hamburguesas Python', 'Comida Casual', 20)
 restaurant2.mostrar_informacion()
-
-#Mostrar la información
-print(f'Nombre Restaurant: {restaurant.nombre}')
-print(f'Nombre Restaurant: {restaurant2.nombre}')
