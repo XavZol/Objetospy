@@ -1,50 +1,36 @@
 class Restaurant:
 
-    def __init__(self, nombre, categoria, precio):
+    def __init__(self, nombre, categoria, precio,):
         self.nombre = nombre # Atributo
         self.categoria = categoria
-        self.__precio = precio # Default: Public, PROTECTED, PRIVATE
+        self.precio = precio # Default: Public, PROTECTED, PRIVATE
 
     def mostrar_informacion(self):
-        print(f'Nombre: {self.nombre}, Categoria: {self.categoria}, Precio: {self.__precio}')
-
-    # GETTERS Y SETTERSclass Restaurant:
-
-    def __init__(self, nombre, categoria, precio):
-        self.nombre = nombre # Atributo
-        self.categoria = categoria
-        self.__precio = precio # Default: Public, PROTECTED, PRIVATE
-
-    def mostrar_informacion(self):
-        print(f'Nombre: {self.nombre}, Categoria: {self.categoria}, Precio: {self.__precio}')
+        print(f'Nombre: {self.nombre}, Categoria: {self.categoria}, Precio: {self.precio}')
 
     # GETTERS Y SETTERS - Get = Obtiene un valor, SET = Agrega un valor
     def get_precio(self):
-        return self.__precio
+        return self.precio
 
     def set_precio(self, precio):
-        self.__precio = precio
+        self.precio = precio
 
 # Crear una clase hijo de Restaurant
 class Hotel(Restaurant):
-    def __init__(self, nombre, categoria, precio):
+    def __init__(self, nombre, categoria, precio, alberca):
         super().__init__(nombre, categoria, precio)
+        self.alberca = alberca
+        
+    #reescribir un método (debe llamarse igual)
+    def mostrar_informacion(self):
+        print(f'Nombre: {self.nombre}, Categoria: {self.categoria}, Precio: {self.precio}, Alberca: {self.alberca}')
 
-hotel = Hotel('Hotel POO', '5 Estrellas', 200)
-hotel.mostrar_informacion() - Get = Obtiene un valor, SET = Agrega un valor
-    def get_precio(self):
-        return self.__precio
+#agregar un método que solo existe en hotel
 
-    def set_precio(self, precio):
-        self.__precio = precio
+    def get_alberca(self):
+        return self.alberca
 
-#Instanciar la clase
-restaurant = Restaurant('Pizzeria Mexico', 'Comida Italiana', 50)
-# restaurant.__precio = 80 #No será posible modificarlo con PRIVATE
-restaurant.mostrar_informacion()
-restaurant.set_precio(80)
-precio = restaurant.get_precio()
-print(precio)
-
-restaurant2 = Restaurant('Hamburguesas Python', 'Comida Casual', 20)
-restaurant2.mostrar_informacion()
+hotel = Hotel('Hotel POO', '5 Estrellas', 200, 'Si')
+hotel.mostrar_informacion()
+alberca = hotel.get_alberca()
+print(alberca)
